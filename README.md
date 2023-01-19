@@ -7,22 +7,35 @@
 ## Usage
 
 ```
-terraform apply \
-    -var xoa_url="wss://localhost" \
-    -var xoa_user="xo_web_user" \
-    -var xoa_pass="xo_web_password" \
-    -var ssh_pub_key="./id_rsa.pub" \
-    -var vm_user="some_user"
+terraform apply -var-file definitions.tfvars
 ```
 
 ## Helpful Notes
 
-- cloud_config.tftpl
-    - Changes to this file will be applicable to all VMs
+- Changes to cloud_config.tftpl will be applicable to all VMs
+- Modify values within data.tf file to correspond with matching XCP-ng values
 
-- data.tf
-    - Modify values within file to correspond with matching XCP-ng values
+## Post ceph-terraform
 
-- virtualmachines.tf to add additional VMs
-    - change ip values where desired
-    - change hostname values where desired
+Leverage cephadm ansible
+
+https://github.com/ceph/cephadm-ansible
+
+Create the inventory file based hostname / IP
+
+NOTE: View supported groups to better define monitors, rgw, osds, etc.
+
+```
+ceph-storage-1 ansible_host=10.0.0.1
+ceph-storage-2 ansible_host=10.0.0.2
+...
+
+[admin]
+ceph-stroage-1 ansible_host=10.0.0.1
+```
+
+Once the inventory has been created run preflight checks
+
+```
+ansible-playbook -i inventory cephadm-preflight.yml
+```
