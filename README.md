@@ -6,6 +6,8 @@
 
 ## Usage
 
+Modify the values within definitions.tfvars to support your environment
+
 ```
 terraform apply -var-file definitions.tfvars
 ```
