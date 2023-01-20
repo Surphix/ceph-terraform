@@ -12,6 +12,9 @@ Modify the values within definitions.tfvars to support your environment
 terraform apply -var-file definitions.tfvars
 ```
 
+NOTE: Best way to run ceph on XCP-ng is to provide RAID controllers as pass through devices.
+https://xcp-ng.org/docs/compute.html#pci-passthrough
+
 ## Helpful Notes
 
 - Changes to cloud_config.tftpl will be applicable to all VMs
@@ -22,6 +25,7 @@ terraform apply -var-file definitions.tfvars
 Leverage cephadm ansible
 
 https://github.com/ceph/cephadm-ansible
+https://docs.ceph.com/projects/cephadm-ansible/en/latest/index.html
 
 Create the inventory file based hostname / IP
 
