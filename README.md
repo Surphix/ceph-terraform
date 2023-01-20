@@ -9,7 +9,7 @@
 Modify the values within definitions.tfvars to support your environment
 
 ```
-terraform apply -var-file definitions.tfvars
+terraform apply -var-file variables.tfvars
 ```
 
 NOTE: Best way to run ceph on XCP-ng is to provide RAID controllers as pass through devices.
