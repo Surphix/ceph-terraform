@@ -1,7 +1,0 @@
- xoa_url="wss://localhost"
- xoa_user="xoa_web_user"
- xoa_pass="xoa_web_pass"
- xoa_insecure = true
- ssh_pub_key="/home/user/id_rsa.pub"
- vm_user="user"
- ip_list=["10.0.0.1", "10.0.0.2", "10.0.0.3", "10.0.0.4"]
