@@ -12,9 +12,9 @@ resource "xenorchestra_vm" "ceph-storage-1" {
     template = data.xenorchestra_template.ubuntu_template.id
 
     disk {
-        sr_id = data.xenorchestra_sr.xcp-2-local-storage.id
-        name_label = "Ubuntu Home"
-        size = 53687091200
+      sr_id = data.xenorchestra_sr.xcp-2-local-storage.id
+      name_label = "Ubuntu Home"
+      size = 53687091200
     }
 
     network {
